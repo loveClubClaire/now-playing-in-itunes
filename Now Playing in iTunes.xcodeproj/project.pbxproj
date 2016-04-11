@@ -17,7 +17,7 @@
 		C0974E1B1ABCB5190014B57E /* NowPlayingBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = C0974E1A1ABCB5190014B57E /* NowPlayingBlack.png */; };
 		C0D23D661CBB7E4F00642A2F /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D23D651CBB7E4F00642A2F /* AppleScriptObjC.framework */; };
 		C0D23DCE1CBC217E00642A2F /* MyStuff.applescript in Sources */ = {isa = PBXBuildFile; fileRef = C0D23DCD1CBC217E00642A2F /* MyStuff.applescript */; };
-		C0D23DD31CBC35DE00642A2F /* ApplescriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D23DD21CBC35DE00642A2F /* ApplescriptBridge.m */; };
+		C0D23DD61CBC398900642A2F /* ApplescriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D23DD41CBC398900642A2F /* ApplescriptBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		C0D23D651CBB7E4F00642A2F /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		C0D23DCC1CBC217E00642A2F /* MyStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStuff.h; sourceTree = "<group>"; };
 		C0D23DCD1CBC217E00642A2F /* MyStuff.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MyStuff.applescript; sourceTree = "<group>"; };
-		C0D23DD11CBC35DE00642A2F /* ApplescriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplescriptBridge.h; path = ../ApplescriptBridge.h; sourceTree = "<group>"; };
-		C0D23DD21CBC35DE00642A2F /* ApplescriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplescriptBridge.m; path = ../ApplescriptBridge.m; sourceTree = "<group>"; };
+		C0D23DD41CBC398900642A2F /* ApplescriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplescriptBridge.m; sourceTree = "<group>"; };
+		C0D23DD51CBC398900642A2F /* ApplescriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplescriptBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 				C0974E1A1ABCB5190014B57E /* NowPlayingBlack.png */,
 				C0974DF21ABBC9670014B57E /* AppDelegate.h */,
 				C0974DF31ABBC9670014B57E /* AppDelegate.m */,
-				C0D23DD11CBC35DE00642A2F /* ApplescriptBridge.h */,
-				C0D23DD21CBC35DE00642A2F /* ApplescriptBridge.m */,
+				C0D23DD41CBC398900642A2F /* ApplescriptBridge.m */,
+				C0D23DD51CBC398900642A2F /* ApplescriptBridge.h */,
 				C0974DF71ABBC9670014B57E /* Images.xcassets */,
 				C0974DF91ABBC9670014B57E /* MainMenu.xib */,
 				C0974DF01ABBC9670014B57E /* Supporting Files */,
@@ -238,7 +238,7 @@
 			files = (
 				C0D23DCE1CBC217E00642A2F /* MyStuff.applescript in Sources */,
 				C0974DF61ABBC9670014B57E /* main.m in Sources */,
-				C0D23DD31CBC35DE00642A2F /* ApplescriptBridge.m in Sources */,
+				C0D23DD61CBC398900642A2F /* ApplescriptBridge.m in Sources */,
 				C0974DF41ABBC9670014B57E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
