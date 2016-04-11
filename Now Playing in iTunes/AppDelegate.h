@@ -7,11 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ApplescriptBridge.h"
+
+
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-
 @property (strong, nonatomic) NSStatusItem *statusItem;
+@property ApplescriptBridge *myBridge;
 
 @end
 

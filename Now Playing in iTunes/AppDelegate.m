@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate ()
 
 
@@ -87,11 +89,14 @@
     _statusItem.image = iconImage;
     _statusItem.highlightMode = YES;
     
+    //Initalize our ApplescriptBridge object
+    _myBridge = [[ApplescriptBridge alloc]init];
+    
 }
 
 -(void)masterTimeControler:(NSTimer*)timer{
     if (isdelayed == false) {
-        BOOL iTunesPlaying = [self isiTunesPlaying];
+        BOOL iTunesPlaying = [_myBridge isiTunesPlaying];
         if (iTunesPlaying == true) {
             BOOL didGetTrackInfo = [self getInfoFromiTunes];
             if (didGetTrackInfo == true) {
@@ -209,6 +214,7 @@
                             @"end if\n"
                                 @"end tell\n"
                                 @"end if\n";
+    
     NSAppleScript *isiTunesPlaying = [[NSAppleScript alloc]initWithSource:script];
     NSAppleEventDescriptor *iTunesState = [isiTunesPlaying executeAndReturnError:nil];
     BOOL state = [[iTunesState stringValue]boolValue];
