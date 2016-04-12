@@ -18,6 +18,7 @@
 		C0D23D661CBB7E4F00642A2F /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D23D651CBB7E4F00642A2F /* AppleScriptObjC.framework */; };
 		C0D23DCE1CBC217E00642A2F /* MyStuff.applescript in Sources */ = {isa = PBXBuildFile; fileRef = C0D23DCD1CBC217E00642A2F /* MyStuff.applescript */; };
 		C0D23DD61CBC398900642A2F /* ApplescriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D23DD41CBC398900642A2F /* ApplescriptBridge.m */; };
+		C0D23DD81CBCA49A00642A2F /* AppleScript-ObjC bridge functions 4:11:16.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0D23DD71CBCA49A00642A2F /* AppleScript-ObjC bridge functions 4:11:16.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C0D23DCD1CBC217E00642A2F /* MyStuff.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = MyStuff.applescript; sourceTree = "<group>"; };
 		C0D23DD41CBC398900642A2F /* ApplescriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplescriptBridge.m; sourceTree = "<group>"; };
 		C0D23DD51CBC398900642A2F /* ApplescriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplescriptBridge.h; sourceTree = "<group>"; };
+		C0D23DD71CBCA49A00642A2F /* AppleScript-ObjC bridge functions 4:11:16.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "AppleScript-ObjC bridge functions 4:11:16.txt"; path = "Now Playing in iTunes/AppleScript-ObjC bridge functions 4:11:16.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		C0974DE41ABBC9670014B57E = {
 			isa = PBXGroup;
 			children = (
+				C0D23DD71CBCA49A00642A2F /* AppleScript-ObjC bridge functions 4:11:16.txt */,
 				C0D23D651CBB7E4F00642A2F /* AppleScriptObjC.framework */,
 				C0974DEF1ABBC9670014B57E /* Now Playing in iTunes */,
 				C0974E031ABBC9670014B57E /* Now Playing in iTunesTests */,
@@ -218,6 +221,7 @@
 				C0974E191ABBD1470014B57E /* NowPlayingGreen.png in Resources */,
 				C0974E1B1ABCB5190014B57E /* NowPlayingBlack.png in Resources */,
 				C0974DFB1ABBC9670014B57E /* MainMenu.xib in Resources */,
+				C0D23DD81CBCA49A00642A2F /* AppleScript-ObjC bridge functions 4:11:16.txt in Resources */,
 				C0974E181ABBD1470014B57E /* NowPlayingRed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
