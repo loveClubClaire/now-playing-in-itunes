@@ -14,5 +14,7 @@
 @property id<myStuffProtocol> myInstance;
 
 -(Boolean)isiTunesPlaying;
+-(Boolean)getInfoFromiTunes_ExemptArtist:(NSString *)anExemptArtist NowPlayingFilepath:(NSString *)aNowPlayingFilepath;
+-(NSString*)convertToApplescriptFilepath:(NSString *)aFilepath;
 
 @end

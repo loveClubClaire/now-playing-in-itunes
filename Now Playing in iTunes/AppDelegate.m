@@ -96,9 +96,8 @@
 
 -(void)masterTimeControler:(NSTimer*)timer{
     if (isdelayed == false) {
-        BOOL iTunesPlaying = [_myBridge isiTunesPlaying];
-        if (iTunesPlaying == true) {
-            BOOL didGetTrackInfo = [self getInfoFromiTunes];
+        if ([_myBridge isiTunesPlaying] == true) {
+            BOOL didGetTrackInfo = [_myBridge getInfoFromiTunes_ExemptArtist:exemptArtist NowPlayingFilepath:nowPlayingFilepath];
             if (didGetTrackInfo == true) {
                 NSImage *iconImage = [NSImage imageNamed:@"NowPlayingGreen.png"];
                 _statusItem.image = iconImage;
@@ -197,74 +196,74 @@
     _statusItem.image = iconImage;
 }
 
--(BOOL)isiTunesPlaying{
-    NSString *script =
-    @"global okflag, theMessage, this_app\n"
-    @"set this_app to current application -- for attachable apps\n"
-    @"set okflag to false\n"
-            @"tell application \"Finder\"\n"
-            @"if (get name of every process) contains \"iTunes\" then set okflag to true\n"
-                @"end tell\n"
-                @"if okflag then\n"
-                    @"tell application \"iTunes\"\n"
-                    @"if player state is playing then\n"
-                        @"return true\n"
-                        @"else\n"
-                            @"return false\n"
-                            @"end if\n"
-                                @"end tell\n"
-                                @"end if\n";
-    
-    NSAppleScript *isiTunesPlaying = [[NSAppleScript alloc]initWithSource:script];
-    NSAppleEventDescriptor *iTunesState = [isiTunesPlaying executeAndReturnError:nil];
-    BOOL state = [[iTunesState stringValue]boolValue];
-    return state;
-    
-}
+//-(BOOL)isiTunesPlaying{
+//    NSString *script =
+//    @"global okflag, theMessage, this_app\n"
+//    @"set this_app to current application -- for attachable apps\n"
+//    @"set okflag to false\n"
+//            @"tell application \"Finder\"\n"
+//            @"if (get name of every process) contains \"iTunes\" then set okflag to true\n"
+//                @"end tell\n"
+//                @"if okflag then\n"
+//                    @"tell application \"iTunes\"\n"
+//                    @"if player state is playing then\n"
+//                        @"return true\n"
+//                        @"else\n"
+//                            @"return false\n"
+//                            @"end if\n"
+//                                @"end tell\n"
+//                                @"end if\n";
+//    
+//    NSAppleScript *isiTunesPlaying = [[NSAppleScript alloc]initWithSource:script];
+//    NSAppleEventDescriptor *iTunesState = [isiTunesPlaying executeAndReturnError:nil];
+//    BOOL state = [[iTunesState stringValue]boolValue];
+//    return state;
+//    
+//}
 
--(BOOL)getInfoFromiTunes{
-    NSString *script1 =
-    @"tell application \"iTunes\"\n"
-    @"set my_current_track to (a reference to current track)\n"
-    @"set art_comp to \"\"\n"
-    @"if (get artist of my_current_track) is not \"";
-    
-    NSString *script2 =
-    @"\" then\n"
-        @"if (get artist of my_current_track) is not \"\" then\n"
-            @"set art_comp to (get artist of my_current_track) as string\n"
-            @"end if\n"
-                @"set theMessage to \"Title: \" & (get name of my_current_track) & \"\n"
-                @"\" & \"Artist: \" & art_comp\n"
-                @"set the_file to (the POSIX file \"";
-    
-    NSString *script3 =
-    @"\")\n"
-                @"try\n"
-                @"set dataStream to open for access file the_file with write permission\n"
-                    @"set eof of dataStream to 0\n"
-                    @"write theMessage to dataStream starting at eof as text\n"
-                    @"close access dataStream\n"
-                    @"on error\n"
-                    @"try\n"
-                    @"close access file the_file\n"
-                    @"end try\n"
-                    @"end try\n"
-                    
-                    @"end if -- aritst in wcnuradio\n"
-                    @"return true\n"
-                        @"end tell\n";
-
-    NSString *fullScript = [NSString stringWithFormat:@"%@%@%@%@%@",script1,exemptArtist,script2,nowPlayingFilepath,script3];
-    NSAppleScript *getInfo = [[NSAppleScript alloc]initWithSource:fullScript];
-    NSAppleEventDescriptor *iTunesInfo = [getInfo executeAndReturnError:nil];
-    BOOL state = [[iTunesInfo stringValue]boolValue];
-    return state;
-    
-    
-    
-    return true;
-}
+//-(BOOL)getInfoFromiTunes{
+//    NSString *script1 =
+//    @"tell application \"iTunes\"\n"
+//    @"set my_current_track to (a reference to current track)\n"
+//    @"set art_comp to \"\"\n"
+//    @"if (get artist of my_current_track) is not \"";
+//    
+//    NSString *script2 =
+//    @"\" then\n"
+//        @"if (get artist of my_current_track) is not \"\" then\n"
+//            @"set art_comp to (get artist of my_current_track) as string\n"
+//            @"end if\n"
+//                @"set theMessage to \"Title: \" & (get name of my_current_track) & \"\n"
+//                @"\" & \"Artist: \" & art_comp\n"
+//                @"set the_file to (the POSIX file \"";
+//    
+//    NSString *script3 =
+//    @"\")\n"
+//                @"try\n"
+//                @"set dataStream to open for access file the_file with write permission\n"
+//                    @"set eof of dataStream to 0\n"
+//                    @"write theMessage to dataStream starting at eof as text\n"
+//                    @"close access dataStream\n"
+//                    @"on error\n"
+//                    @"try\n"
+//                    @"close access file the_file\n"
+//                    @"end try\n"
+//                    @"end try\n"
+//                    
+//                    @"end if -- aritst in wcnuradio\n"
+//                    @"return true\n"
+//                        @"end tell\n";
+//
+//    NSString *fullScript = [NSString stringWithFormat:@"%@%@%@%@%@",script1,exemptArtist,script2,nowPlayingFilepath,script3];
+//    NSAppleScript *getInfo = [[NSAppleScript alloc]initWithSource:fullScript];
+//    NSAppleEventDescriptor *iTunesInfo = [getInfo executeAndReturnError:nil];
+//    BOOL state = [[iTunesInfo stringValue]boolValue];
+//    return state;
+//    
+//    
+//    
+//    return true;
+//}
 
 -(BOOL)setDelay{
     //Generate and run input window

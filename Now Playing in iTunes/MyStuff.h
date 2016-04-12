@@ -7,4 +7,6 @@
 - (NSString *)    firstSelection;
 - (void)          iTunesPause;
 - (NSString *)    isiTunesPlaying;
+- (NSString *)    getInfoFromiTunes:(NSString*)anExemptArtist :(NSString *)aNowPlayingFilepath;
+
 @end
