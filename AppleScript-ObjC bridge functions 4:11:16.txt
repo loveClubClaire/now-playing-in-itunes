@@ -3,9 +3,9 @@ How to write AppleScript-ObjC bridge functions.
 in the objective C header with a function defined as such: 
 - (void)          iTunesPause;
 we have a function called iTunesPause which has a return type of void. The applescript function is defined as such: 
-on isiTunesPlaying()
+on iTunesPause()
 	--Code
-end isiTunesPlaying
+end iTunesPause
 
 the applescript function has the same name as the objective c function and because the objective c function takes no parameters, neither does the applescript function. 
 
