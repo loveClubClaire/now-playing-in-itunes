@@ -29,4 +29,6 @@ end getInfoFromiTunes_AtNowPlayingFilepath_
 
 So for the applescript function definition, we have the Objective C function name, an underscore for the first parameter, the second parameter identifier string, and another underscore for the second parameter. 
 
-Whoever wrote this spec man. Like what the hell. 
+Whoever wrote this spec man. Like what the hell.
+
+P.S. use NSNumber in objective c if you want a parameter of interger in applescript. Almost certainly usable for other applescript number types, I just havent tested them. 
